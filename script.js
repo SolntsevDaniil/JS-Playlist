@@ -1,10 +1,4 @@
-/* ---------- Start of the program ---------- */
-
-
-// Declaration of strict mode
 'use strict';
-
-// Page load ending event
 window.addEventListener('DOMContentLoaded', function() {
 
 	// Submit event
@@ -34,6 +28,3 @@ window.addEventListener('DOMContentLoaded', function() {
 		};
 	});
 });
-
-
-/* ---------- End of the program ---------- */
