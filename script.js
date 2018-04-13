@@ -1,30 +1,26 @@
 'use strict';
-window.addEventListener('DOMContentLoaded', function() {
+class Playlist {
 
-	// Submit event
-	document.getElementById('submit').addEventListener('click', function() {
-
-		// Textarea searching
-		var textArea = document.getElementById('input'),
-			// Textarea value is name of song
-			songName = textArea.value;
-
-		if (!songName || songName == '') {
+	addSong(input) {
+		if(!input || input == '') {
 			alert('Please, enter the name of the song');
 		} else {
 
-			// Creating of new element
-			var li = document.createElement('li'),
-				// List searching
-				ul = document.getElementById('playlist');
-
-			// Adding song name to the page
-			li.innerHTML = songName;
+			const li = document.createElement('li'),
+				  ul = document.querySelector('#playlist');
+			
+			li.innerHTML = input;
 			li.className = 'playlist__item';
 			ul.appendChild(li);
 
-			// Value clearing
-			textArea.value = '';
+			input = '';
 		};
-	});
+	};
+
+};
+
+const playlist = new Playlist();
+document.querySelector('#submit').addEventListener('click', () => {
+	const input = document.querySelector('#input').value;
+	playlist.addSong(input);
 });
